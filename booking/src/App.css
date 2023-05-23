@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+:root {
+  --fonts: 'PT Serif', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fonts);
+}
+
+.navbar-container {
+  width: 100%;
+  height: 5rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.headermain {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-container a {
+  color: black;
+  text-decoration: none;
+  font-size: x-large;
+  font-weight: 500;
+  padding: 30px;
+}
+
+.navbarlogo {
+  width: 150px;
+}
+
+.section1 {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.text-container,
+.imageContainer {
+  width: 480px;
+  height: 20rem;
+  margin: 0 20px;
+}
+
+.text-container {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+}
+
+.text {
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.text-container h1 {
+  font-size: 50px;
+}
+
+.text-container h2 {
+  font-size: xx-large;
+}
+
+.text-container p {
+  font-size: large;
+}
+
+.mainbutton {
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: medium;
+  width: 150px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.section2 {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.secton2Container {
+  width: 1000px;
+  height: 34rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.s2Header {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.s2Header h1 {
+  font-size: xx-large;
+}
+
+.s2Header button {
+  width: 150px;
+  height: 50px;
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 280px;
+  height: 420px;
+  background-color: rgba(0, 0, 0, 0.319);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+}
+
+.card-content {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 10px;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: large;
+  color: #b23f0a;
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  background-image: url(assets/greek.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.orderbtn a {
+  text-decoration: none;
+  color: black;
+  font-size: large;
+}
+
+.card-img3 {
+  width: 100%;
+  height: 200px;
+  background-image: url(assets/lemon\ dessert.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-img2 {
+  width: 100%;
+  height: 200px;
+  background-image: url(assets/ProvoloneBruschetta_.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.section3 {
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.testCardsContainer {
+  width: 1000px;
+  height: 15rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.testCard {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+.testCard h2 {
+  font-size: medium;
+}
+
+.testCard h3 {
+  cursor: pointer;
+}
+
+.picAndText {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section4 {
+  width: 100%;
+  height: 35rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.lillemontext,
+.twopics {
+  width: 500px;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+
+.heads h1 {
+  font-size: 60px;
+}
+
+.heads h2 {
+  font-size: xx-large;
+}
+
+.paragraph p {
+  font-size: large;
+}
+
+.twopics {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  height: 500px;
+}
+
+.foodpic {
+  transform: translateX(20px);
+  z-index: 1;
+}
+
+.respic {
+  transform: translateY(-100px) translateX(-50px);
+  z-index: 2;
+}
+
+footer {
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footerimg {
+  width: 300px;
+  height: 400px;
+}
+
+.footerlinks {
+  flex-direction: row;
+  display: flex;
+}
+
+.footercard {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footercard h1 {
+  font-size: large;
+}
+
+.footercard a {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 1208px) {
+  .footerimg {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1029px) {
+  .secton2Container {
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  .testCardsContainer {
+    width: 100%;
+  }
+
+  .footercard {
+    width: 200px;
+  }
+
+  .navbar-container a {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 876px) {
+  .section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50rem;
+  }
+
+  .text-container {
+    margin-bottom: 15px;
+  }
+  .mainbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards-container {
+    height: 1000rem;
+  }
+}
+
+@media screen and (max-width: 939px) {
+  .section2Container {
+    height: 70rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+
+  .section2 {
+    height: 60rem;
+  }
+
+  .cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .card {
+    margin: 15px 0;
+  }
+}
+
+@media screen and (max-width: 659px) {
+  .section2Container {
+    height: 80rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+  }
+
+  .section2 {
+    height: 90rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .testCardsContainer {
+    flex-wrap: wrap;
+  }
+
+  .section3 {
+    height: 30rem;
+    justify-content: start;
+  }
+}
+
+@media screen and (max-width: 888px) {
+  .section4 {
+    flex-direction: column;
+    height: 25rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .twopics {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 608px) {
+  .footerlinks {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 503px) {
+
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .lillemontext {
+    width: 90%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .paragraph {
+    width: 90%;
+  }
+  
+  .section1 img {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .imageContainer {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 503px) {
+  .text {
+    text-align: center;
+  }
+
+  
+}
+
+@media screen and (max-width: 399px) {
+  .section3 {
+    height: 55rem;
+  }
+
+  footer {
+    height: 40rem;
+  }
+}
+
+@media screen and (max-width:464px) {
+  .lillemontext p, h2 {
+    font-size: medium;
+  }
+  .lillemontext h1 {
+    font-size: xx-large;
+  }
+}
