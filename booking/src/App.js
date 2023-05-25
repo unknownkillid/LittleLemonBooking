@@ -8,28 +8,173 @@ import test4Pic from './assets/pexels-photo-3375230.jpeg'
 import lastpics from './assets/restauranfood.jpg'
 import lastpics2 from './assets/res.jpg'
 import footerpic from './assets/restaurantfooter.jpg'
+import React, { useState } from 'react';
 
+function resopen() {
+  document.getElementById('reserveSection').classList.add('display')
+  document.getElementById('section1').classList.add('none')
+  document.getElementById('reserveSection').classList.remove('none')
+}
 
+const body = document.body
 
 function App() {
-  return (
+  const [occasion, setOccasion] = useState('');
+  const [numberOfDinners, setNumberOfDinners] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
+  const [dateValue, setDateValue] = useState('');
 
+  const popDown = () => {
+    document.getElementById('pop').classList.add('none')
+    body.style.overflowY = 'scroll'
+    document.getElementById('section1').classList.remove('none')
+  }
+
+
+
+  const handleReserveNow = () => {
+    let isValid = true;
+
+    const indoorSeatingChecked = document.getElementById('check1').checked;
+    const outdoorSeatingChecked = document.getElementById('check2').checked;
+    if (!indoorSeatingChecked && !outdoorSeatingChecked) {
+      isValid = false;
+      document.getElementById('textcontent').textContent = "You missed check boxes"
+      document.getElementById('check1').classList.add('borseat');
+      document.getElementById('check2').classList.add('borseat');
+    } else {
+      document.getElementById('textcontent').textContent = ""
+      document.getElementById('check1').classList.remove('borseat');
+      document.getElementById('check2').classList.remove('borseat');
+    }
+
+    if (dateValue === '') {
+      isValid = false;
+      document.getElementById('dateInputt').classList.add('invalid');
+    } else {
+      document.getElementById('dateInputt').classList.remove('invalid');
+    }
+
+    if (occasion === '') {
+      isValid = false;
+      document.getElementById('birthday').classList.add('invalid');
+    } else {
+      document.getElementById('birthday').classList.remove('invalid');
+    }
+
+    if (numberOfDinners === '') {
+      isValid = false;
+      document.getElementById('dinner').classList.add('invalid');
+    } else {
+      document.getElementById('dinner').classList.remove('invalid');
+    }
+
+    if (selectedTime === '') {
+      isValid = false;
+      document.getElementById('time').classList.add('invalid');
+    } else {
+      document.getElementById('time').classList.remove('invalid');
+    }
+
+    if (isValid) {
+      body.style.overflow = 'hidden'
+      document.getElementById('pop').classList.add('display')
+      document.getElementById('pop').classList.remove('none')
+      document.getElementById('reserveSection').classList.add('none')
+      console.log('Form submitted');
+    }
+  };
+
+  return (
     <div className="App">
+
       <header>
-        
-          <div className="navbar-container">
-            <img src={navbarLogo} alt="" className="navbarlogo" />
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
-            <a href="#">Reservations</a>
-            <a href="#">OlderOnline</a>
-            <a href="#">Login</a>
-          </div>
-        
+
+        <div className="navbar-container">
+          <img src={navbarLogo} alt="" className="navbarlogo" />
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Menu</a>
+          <a href="#">Reservations</a>
+          <a href="#">OlderOnline</a>
+          <a href="#">Login</a>
+        </div>
+
       </header>
 
-      <section className="section1">
+      <div className="popup" id='pop'>
+        <div className="contentpop">
+          <h1>Table Reserved!</h1>
+          <h2>Thank you for using our service</h2>
+          <button className='okay' id='okaybtn' onClick={popDown}>Done</button>
+        </div>
+      </div>
+
+      <section className='reserveSection' id='reserveSection'>
+        <h1>Reserve Table</h1>
+        <div className="reserveCotnainers">
+          <div className="reservFirstContainer">
+            <form action="#">
+              <div className="checkDiv">
+                <input type="checkbox" id='check1' className='inSeatCheck' />
+                <label htmlFor="check1">Indoor seating</label>
+              </div>
+              <br />
+              <label htmlFor="dateInput">Date*</label>
+              <input
+                type="date"
+                id='dateInputt'
+                placeholder='Date'
+                className='dateinput'
+                value={dateValue}
+                onChange={(e) => setDateValue(e.target.value)}
+              />
+              <br />
+              <label htmlFor="birthday">Occasion*</label>
+              <select name="occasion" id="birthday" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+                <option selected hidden>Occasion</option>
+                <option value="Birth Day">Birth Day</option>
+                <option value="Engagement">Engagement</option>
+                <option value="anniversary">Anniversary</option>
+              </select>
+            </form>
+          </div>
+          <div className="reservSecondContainer">
+            <form action="#">
+              <div className="checkDiv">
+                <input type="checkbox" id='check2' className='inSeatCheck' />
+                <label htmlFor="check2">Outdoor seating</label>
+              </div>
+              <br />
+              <label htmlFor="dinner">Dinner*</label>
+              <select name="dinner" id="dinner" value={numberOfDinners} onChange={(e) => setNumberOfDinners(e.target.value)}>
+                <option selected hidden>Number of dinners</option>
+                <option value="dinner1">1 Dinner</option>
+                <option value="dinner2">2 Dinner</option>
+                <option value="dinner3">3 Dinner</option>
+                <option value="dinner4">4 Dinner</option>
+                <option value="dinner5">5 Dinner</option>
+              </select>
+              <br />
+              <label htmlFor="time">Time*</label>
+              <select name="time" id="time" value={selectedTime} onChange={(e) => setSelectedTime(e.target.value)}>
+                <option selected hidden >Select Time</option>
+                <option value="5">5:00 pm</option>
+                <option value="6">6:00 pm</option>
+                <option value="7">7:00 pm</option>
+                <option value="8">8:00 pm</option>
+                <option value="9">9:00 pm</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <div id='textcontent'></div>
+        <button className='reserveNow' id='reserveNowButton' onClick={handleReserveNow}>
+          Reserve Now
+        </button>
+      </section>
+
+      <section className="section1" id='section1'>
         <div className="text-container">
           <div className="text">
             <div className="headermain">
@@ -40,7 +185,7 @@ function App() {
           </div>
 
           <div className="mainbtn">
-            <button className="mainbutton">Reserve a Table</button>
+            <button className="mainbutton" id='resbtn' onClick={resopen}>Reserve a Table</button>
           </div>
         </div>
 
@@ -52,8 +197,8 @@ function App() {
       <section className="section2">
         <div className="secton2Container">
           <div className="header">
-              <h1>Specials</h1>
-              <button className="mainbutton">Online Menu</button>
+            <h1>Specials</h1>
+            <button className="mainbutton">Online Menu</button>
           </div>
 
           <div className="cards-container">
@@ -162,6 +307,7 @@ function App() {
           <img src={lastpics2} className="respic" width="300px" height="400px" alt="" />
         </div>
       </section>
+
 
       <footer>
         <div className="footerimg">
